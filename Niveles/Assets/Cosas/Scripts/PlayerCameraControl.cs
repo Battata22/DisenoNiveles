@@ -6,7 +6,6 @@ public class PlayerCameraControl : MonoBehaviour
 {
     [SerializeField] GameObject _cam;
     [SerializeField] GameObject _player;
-    [SerializeField] GameObject _meshPlayer;
     [SerializeField] float _fixedZ, _fixedY;
 
     [SerializeField] float _sensibilidad;
@@ -17,7 +16,6 @@ public class PlayerCameraControl : MonoBehaviour
     {
         _cam = Camera.main.gameObject;
         _player = gameObject;
-        _meshPlayer = GetComponentInChildren<MeshRenderer>().gameObject;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -38,6 +36,9 @@ public class PlayerCameraControl : MonoBehaviour
         _xRotation -= _mouseY;
 
         _xRotation = Mathf.Clamp(_xRotation, -89f, 89f);
+
+        //test
+
     }
 
     private void FixedUpdate()
